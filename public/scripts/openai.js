@@ -3250,7 +3250,8 @@ async function onExportPresetClick() {
     delete preset.proxy_password;
 
     const presetJsonString = JSON.stringify(preset, null, 4);
-    download(presetJsonString, oai_settings.preset_settings_openai, 'application/json');
+    const presetFileName = `${oai_settings.preset_settings_openai}.json`;
+    download(presetJsonString, presetFileName, 'application/json');
 }
 
 async function onLogitBiasPresetImportFileChange(e) {
